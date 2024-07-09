@@ -1,6 +1,7 @@
 const express = require('express');
 const {RtcTokenBuilder, RtcRole} = require('agora-access-token');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 const PORT = process.env.PORT || 8080;
@@ -8,6 +9,9 @@ const APP_ID = process.env.APP_ID;
 const APP_CERTIFICATE = process.env.APP_CERTIFICATE;
 
 const app = express();
+
+const cors = require(cors)
+app.use(cors())
 
 const nocache = (_, resp, next) => {
     resp.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
