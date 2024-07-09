@@ -10,7 +10,6 @@ const APP_CERTIFICATE = process.env.APP_CERTIFICATE;
 
 const app = express();
 
-const cors = require(cors)
 app.use(cors())
 
 const nocache = (_, resp, next) => {
